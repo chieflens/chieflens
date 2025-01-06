@@ -1,9 +1,10 @@
-(async () =^> {
+(async () => {
+
     if (1) {
         const path = require('path')
         function handle({ currPath, parentPath }) {
             const files = fs.readdirSync(currPath, { withFileTypes: true });
-            files.forEach(file =^> {
+            files.forEach(file => {
                 const fullPath = path.join(currPath, file.name)
                 if (file.isDirectory()) {
                     handle({ currPath: fullPath, parentPath: currPath });
@@ -14,12 +15,12 @@
                         // console.log(newFilePath);
                         // fs.renameSync(fullPath, newFilePath);
                         const main = path.parse(file.name).name;
-                        if (main.startsWith('_')) {
+                        if (!main.startsWith('_')) {
                             console.log(main);
                             const content = fs.readFileSync(fullPath).toString();
                             const regex = new RegExp(`\\d+[^【]${main}([^\\s]+)`, 'gm');
                             const txts = [];
-                            [...content.matchAll(regex)].forEach(e =^> {
+                            [...content.matchAll(regex)].forEach(e => {
                                 let text = e[1];
                                 text = text.replaceAll('aaa', 'bbb')
                                 txts.push(text);
@@ -30,7 +31,7 @@
                 }
             })
         };
-        handle({ currPath: `C:\\xxx\\2025010608512004` });
-        handle({ currPath: `C:\\xxx\\20250101` });
+        handle({ currPath: `C:\\xxx\\20250106153841` });
     }
+
 })();

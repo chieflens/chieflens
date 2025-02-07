@@ -1,4 +1,4 @@
-## Update I'm in HK
+## Update I'm in BJ
 
 <!--
 **chieflens/chieflens** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
